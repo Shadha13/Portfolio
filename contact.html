@@ -2,50 +2,268 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Shada Azad</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .contact-section {
+      padding: 120px 0 80px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: #fff;
+    }
+
+    .contact-content {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .contact-content h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .contact-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #000;
+    }
+
+    .contact-content p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      text-decoration: none;
+      color: #000;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .contact-card:hover::before {
+      left: 0;
+    }
+
+    .contact-card:hover {
+      color: #fff;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-card:hover .contact-icon {
+      color: #fff;
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      color: #000;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .contact-card p {
+      color: inherit;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .contact-info {
+      font-weight: 600;
+      font-size: 1rem;
+      word-break: break-word;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border-left: 4px solid #000;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover .contact-info {
+      background: rgba(255, 255, 255, 0.1);
+      border-left-color: #fff;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: scale(1.1);
+      background: #333;
+    }
+
+    @media (max-width: 768px) {
+      .contact-content h2 {
+        font-size: 2.5rem;
+      }
+      
+      .contact-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .contact-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-content h2 {
+        font-size: 2rem;
+      }
+      
+      .contact-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
     <div class="container nav-container">
-   
-     <ul class="nav-links">
-  <li><a href="home.html">Home</a></li>
-
-  <li><a href="projects.html">Projects</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-
-
-
-    <a href="contact.html" class="hire-btn">Hire Me</a>
-
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="hire-btn">Hire Me</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="container hero-container">
-      <div class="left">
-        <h2>I am<br><span>Shada Azad</span></h2>
-        <p>As a final-year engineering student at Srinivas University, I've gained valuable experience through internships with various companies, exposing me to new technologies and innovative ideas. Participating in a college-level hackathon with my team helped me develop problem-solving skills and learn from peers. I've also completed certifications in AWS and Infosys, enhancing my technical expertise. I'm excited to apply my skills and knowledge to drive innovation and growth in the tech industry."
-</p>
-        <div class="buttons">
-          <a href="C:\Users\shada\OneDrive\Desktop\portfolio\resume.pdf\RenderCV_EngineeringResumes_Theme__1_.pdf" class="download-btn" target="_blank">
-  <i class="fas fa-file"></i> Download CV
-</a>
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Get In Touch</h2>
+        <p>I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation. Feel free to reach out through any of the channels below.</p>
+        
+        <div class="contact-links">
+          <a href="mailto:shadaazad@example.com" class="contact-card">
+            <i class="fas fa-envelope contact-icon"></i>
+            <h3>Email</h3>
+            <p>Drop me a line and I'll get back to you</p>
+            <div class="contact-info">shadaazad@example.com</div>
+          </a>
 
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
-   
-      </div>
-      <div class="right">
-        <div class="image-wrapper">
-          <img src="images/profile.jpg" alt="Profile" />
+          <a href="https://linkedin.com/in/shadaazad" target="_blank" class="contact-card">
+            <i class="fab fa-linkedin contact-icon"></i>
+            <h3>LinkedIn</h3>
+            <p>Let's connect professionally</p>
+            <div class="contact-info">linkedin.com/in/shadaazad</div>
+          </a>
+
+          <a href="https://github.com/Shadha13" target="_blank" class="contact-card">
+            <i class="fab fa-github contact-icon"></i>
+            <h3>GitHub</h3>
+            <p>Check out my code and projects</p>
+            <div class="contact-info">github.com/Shadha13</div>
+          </a>
         </div>
       </div>
     </div>
   </section>
+
+  <button class="back-to-top" onclick="scrollToTop()">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const backToTop = document.querySelector('.back-to-top');
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+   
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
